@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block title %}Kosakata - Aplikasi Belajar Bahasa
+Mandarin{% endblock %} {% block content %}
+<div class="vocabulary-section">
+  <div class="container">
+    <div class="page-header">
+      <h1>Kosakata Bahasa Mandarin</h1>
+      <p>
+        Jelajahi dan pelajari kata-kata Bahasa Mandarin dengan pelafalan pinyin
+      </p>
+    </div>
+
+    <div class="vocabulary-controls">
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Cari kosakata..."
+          class="search-input"
+        />
+        <span class="search-icon">🔍</span>
+      </div>
+      <div class="category-filter">
+        <select id="categoryFilter" class="category-select">
+          <option value="all">Semua Kategori</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="vocabulary-stats">
+      <div class="stat-card">
+        <span class="stat-number" id="totalWords">0</span>
+        <span class="stat-label">Total Kata</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="currentCategory">Semua</span>
+        <span class="stat-label">Kategori Saat Ini</span>
+      </div>
+    </div>
+
+    <div class="vocabulary-grid" id="vocabularyGrid">
+      <!-- Kartu kosakata akan dimuat di sini -->
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Memuat kosakata...</p>
+    </div>
+
+    <div class="no-results" id="noResults" style="display: none">
+      <div class="no-results-icon">📚</div>
+      <h3>Tidak ada kata yang ditemukan</h3>
+      <p>Coba sesuaikan pencarian atau filter kategori Anda</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Kartu Kosakata -->
+<div class="modal" id="vocabularyModal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div class="modal-body">
+      <div class="word-display">
+        <h2 class="chinese-word" id="modalChinese"></h2>
+        <p class="pinyin" id="modalPinyin"></p>
+        <p class="indonesian" id="modalIndonesian"></p>
+        <span class="category-tag" id="modalCategory"></span>
+      </div>
+      <div class="word-actions">
+        <button class="btn btn-primary" id="pronounceBtn">🔊 Ucapkan</button>
+        <button class="btn btn-primary" id="practiceBtn">📝 Latihan</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/vocabulary.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block title %}Beranda - Aplikasi Belajar Bahasa
+Mandarin{% endblock %} {% block content %}
+<div class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Belajar Bahasa Mandarin <span class="highlight">Secara Interaktif</span>
+    </h1>
+    <div class="hero-buttons">
+      <a href="{{ url_for('vocabulary_page') }}" class="btn btn-primary"
+        >Mulai Belajar</a
+      >
+      <a href="{{ url_for('quiz_page') }}" class="btn btn-secondary"
+        >Ikuti Kuis</a
+      >
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="chinese-character">学</div>
+    <p class="character-meaning">Belajar</p>
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number" id="vocab-count">100+</div>
+        <div class="stat-label">Kata Kosakata</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Kategori</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Sesi Latihan</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block scripts %}
+<script>
+  // Animate stats on scroll
+  const observerOptions = {
+    threshold: 0.5,
+    rootMargin: "0px 0px -100px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".feature-card, .stat-item").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
+{% endblock %}

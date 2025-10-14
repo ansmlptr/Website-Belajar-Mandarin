@@ -1,0 +1,113 @@
+{% extends "base.html" %} {% block title %}Kuis - Aplikasi Belajar Bahasa
+Mandarin{% endblock %} {% block content %}
+<div class="quiz-section">
+  <div class="container">
+    <div class="page-header">
+      <h1>Kuis Bahasa Mandarin</h1>
+      <p>Uji pengetahuan kosakata Bahasa Mandarin Anda</p>
+    </div>
+
+    <!-- Layar Mulai Kuis -->
+    <div class="quiz-start" id="quizStart">
+      <div class="quiz-intro">
+        <div class="quiz-icon">🎯</div>
+        <h2>Siap untuk Tantangan?</h2>
+        <p>
+          Uji pengetahuan Anda dengan 5 pertanyaan kosakata Bahasa Mandarin acak
+        </p>
+        <button class="btn btn-primary btn-large" id="startQuizBtn">
+          Mulai Kuis
+        </button>
+      </div>
+    </div>
+
+    <!-- Progres Kuis -->
+    <div class="quiz-progress" id="quizProgress" style="display: none">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-text">
+        <span id="currentQuestion">1</span> dari
+        <span id="totalQuestions">5</span>
+      </div>
+    </div>
+
+    <!-- Pertanyaan Kuis -->
+    <div class="quiz-container" id="quizContainer" style="display: none">
+      <div class="question-card">
+        <div class="question-header">
+          <h3>Apa arti kata Bahasa Mandarin ini?</h3>
+        </div>
+        <div class="chinese-display">
+          <div class="chinese-word" id="questionChinese"></div>
+          <div class="pinyin" id="questionPinyin"></div>
+        </div>
+        <div class="options-container" id="optionsContainer">
+          <!-- Pilihan akan dimuat di sini -->
+        </div>
+        <div class="question-actions">
+          <button class="btn btn-primary" id="pronounceQuestionBtn">
+            🔊 Ucapkan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hasil Kuis -->
+    <div class="quiz-results" id="quizResults" style="display: none">
+      <div class="results-card">
+        <div class="results-header">
+          <div class="results-icon" id="resultsIcon">🎉</div>
+          <h2 id="resultsTitle">Kuis Selesai!</h2>
+        </div>
+        <div class="score-display">
+          <div class="score-circle text-center">
+            <span class="score-number" id="finalScore">0</span>
+            <span class="score-total">/5</span>
+          </div>
+          <p class="score-percentage" id="scorePercentage">0%</p>
+        </div>
+        <div class="results-message" id="resultsMessage"></div>
+        <div class="results-actions">
+          <button class="btn btn-primary" id="retakeQuizBtn">
+            Ulangi Kuis
+          </button>
+          <a href="{{ url_for('vocabulary_page') }}" class="btn btn-primary"
+            >Pelajari Kosakata</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Memuat -->
+    <div class="loading" id="quizLoading" style="display: none">
+      <div class="spinner"></div>
+      <p>Memuat pertanyaan kuis...</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Umpan Balik Jawaban -->
+<div class="modal" id="feedbackModal">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="feedback-content">
+        <div class="feedback-icon" id="feedbackIcon"></div>
+        <h3 id="feedbackTitle"></h3>
+        <div class="feedback-details">
+          <p><strong>Hanzi:</strong> <span id="feedbackChinese"></span></p>
+          <p><strong>Pinyin:</strong> <span id="feedbackPinyin"></span></p>
+          <p>
+            <strong>Indonesia:</strong> <span id="feedbackIndonesian"></span>
+          </p>
+        </div>
+        <button class="btn btn-primary" id="nextQuestionBtn">
+          Pertanyaan Selanjutnya
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+{% endblock %}
