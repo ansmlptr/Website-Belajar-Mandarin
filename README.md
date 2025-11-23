@@ -1,4 +1,4 @@
-# 💻 Chinese Learning App
+# Chinese Learning App
 
 > An interactive web application for learning Mandarin through engaging vocabulary lessons and fun quizzes.
 Built with Flask, HTML, CSS, and JavaScript to make language learning more enjoyable and accessible! 🧠✨
@@ -6,60 +6,60 @@ Built with Flask, HTML, CSS, and JavaScript to make language learning more enjoy
 
 <img src="home.png" width="100%">
 
-## ✨ Key Features
-### 📚 Vocabulary
+## Key Features
+### Vocabulary
 - 100+ Mandarin words with Hanzi, Pinyin, and translations
 - Search by Hanzi, pinyin, or meaning
 - Filter by categories (greetings, numbers, colors, animals, nature)
 - Word detail modal with pronunciation feature
 
-### 🎯 Interactive Quiz
+### Interactive Quiz
 - Multiple-choice quiz with 5 random questions
 - Real-time feedback and scoring system
 - Text-to-Speech for pronunciation
 
 ---
 
-## 🧱 Tech Stack
-### 🔙 Backend
+## Tech Stack
+### Backend
 - **Flask** - Python web framework
 - **Python 3.12**
 
-### 🎨 Frontend
+### Frontend
 - **HTML5** - Page structure
 - **CSS3** - Styling
 - **JavaScript (ES6+)** - Interactivity and API calls
 - **Google Fonts** - Inter & Noto Sans SC
 
-### 🌐 Browser Features
+### Browser Features
 - **Web Speech API** - Pronunciation (Text-to-Speech)
 - **Fetch API** - AJAX requests
 
 ---
 
-## ⚙️ Installation & Setup
-### 🧩 Requirements
+## Installation & Setup
+### Requirements
 - Python 3.7 or newer
 - ```pip``` (Python package manager)
 
-### 🚀 Steps
+### Steps
 ```bash
-# 1️⃣ Clone or download the repository
+# Clone or download the repository
 git clone https://github.com/ansmlptr/Website-Belajar-Mandarin.git
 cd Website-Belajar-Mandarin
 
-# 2️⃣ Install dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# 3️⃣ Run the Flask app
+# Run the Flask app
 python app.py
 
-# 4️⃣ Open your browser and visit:
+# Open your browser and visit:
 http://localhost:5000
 ```
 
 ---
-## 📂 Project Structure
+## Project Structure
 
 ```
 Website-Belajar-Mandarin/
@@ -84,7 +84,7 @@ Website-Belajar-Mandarin/
 ```
 ---
 
-## 🧭 API Endpoints
+## API Endpoints
 | Method  | Endpoint          | Description                                             |
 | ------- | ----------------- | ------------------------------------------------------- |
 | **GET** | `/`               | Main homepage                                           |
@@ -96,7 +96,7 @@ Website-Belajar-Mandarin/
 
 ---
 
-## 🈶 Vocabulary Data
+## Vocabulary Data
 This application provides basic Mandarin vocabulary divided into 8 categories:
 1. Days — Days of the week 
 2. Countries — Common country names
@@ -109,20 +109,20 @@ This application provides basic Mandarin vocabulary divided into 8 categories:
 
 ---
 
-## 🌍 Browser Support
+## Browser Support
 - Chrome 60+
 
-## 📸 Website Pages
+## Website Pages
 | Page                 | Screenshot |
 | -------------------  |  ---------- |
-| 🧰 **Vocabulary**    |  <img src="vocab.png" > |
-| 🪄 **Modal**         |  <img src="modal.png" > |
-| 📜 **Quiz**          | <img src="quizz.png" > |
-| 🖥️ **Result**        | <img src="resultt.png" > |
+| **Vocabulary**    |  <img src="vocab.png" > |
+| **Modal**         |  <img src="modal.png" > |
+| **Quiz**          | <img src="quizz.png" > |
+| **Result**        | <img src="resultt.png" > |
 
 ---
 
-## 👩‍💻 Developer
+## Developer
 - **Name**: Anisa Amalia Putri
 - **Email**: [ansmlptr03@gmail.com](mailto:ansmlptr03@gmail.com)
 
